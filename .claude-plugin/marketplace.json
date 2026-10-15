@@ -1,0 +1,7 @@
+{
+  "name": "token-meter",
+  "owner": { "name": "iLolz" },
+  "plugins": [
+    { "name": "token-meter", "source": "./", "description": "Linha de status com tokens do contexto, limites de uso (5 h e 7 dias) e custo da sessão" }
+  ]
+}

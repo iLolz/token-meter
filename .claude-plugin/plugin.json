@@ -1,0 +1,1 @@
+{ "name": "token-meter", "version": "0.1.0", "description": "Linha de status com tokens do contexto, limites de uso (5 h e 7 dias) e custo da sessão" }
