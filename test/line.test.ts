@@ -16,8 +16,21 @@ test('contexto, limites com reset e custo numa linha', async () => {
     now,
   )
   expect(text).toBe(
-    'ctx 123k/1M (12%) · 5h ▰▱▱▱▱ 23.5% ↻2h30m · 7d ▰▰▰▱▱ 61% ↻2d7h · US$ 4.20',
+    'ctx 123k/1M (12%) · 5h 🟩⬜⬜⬜⬜ 23.5% ↻2h30m · 7d 🟨🟨🟨⬜⬜ 61% ↻2d7h · US$ 4.20',
   )
+})
+
+test('barra verde até 2, amarela em 3 e vermelha em 4 e 5', async () => {
+  const bars = [5, 30, 60, 80, 95].map(percentUsed =>
+    line({ context: { window: 200_000 }, rateLimits: [{ kind: 'five_hour', percentUsed }] }, now),
+  )
+  expect(bars).toEqual([
+    '5h ⬜⬜⬜⬜⬜ 5%',
+    '5h 🟩🟩⬜⬜⬜ 30%',
+    '5h 🟨🟨🟨⬜⬜ 60%',
+    '5h 🟥🟥🟥🟥⬜ 80%',
+    '5h 🟥🟥🟥🟥🟥 95%',
+  ])
 })
 
 test('sem leitura nenhuma limpa a linha', async () => {

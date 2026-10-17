@@ -17,7 +17,8 @@ const compact = (n: number) =>
 
 const bar = (percent: number) => {
   const filled = Math.max(0, Math.min(5, Math.round(percent / 20)))
-  return '▰'.repeat(filled) + '▱'.repeat(5 - filled)
+  const color = filled >= 4 ? '🟥' : filled === 3 ? '🟨' : '🟩'
+  return color.repeat(filled) + '⬜'.repeat(5 - filled)
 }
 
 const resetIn = (iso: string | undefined, now: number) => {
