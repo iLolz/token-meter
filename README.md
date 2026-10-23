@@ -15,6 +15,8 @@ ctx 123k/1M (12%) · 5h 🟩⬜⬜⬜⬜ 23.5% ↻2h30m · 7d 🟨🟨🟨⬜⬜
 
 A cor da barra indica o risco de bater no limite: 🟩 com 1 ou 2 blocos cheios, 🟨 com 3 e 🟥 com 4 ou 5.
 
+![Linha de status do token-meter no terminal do Claude Code](docs/status-line.png)
+
 A linha se atualiza sozinha durante a sessão.
 
 ## Instalação
